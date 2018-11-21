@@ -1,0 +1,16 @@
+[package]
+name = "fs-linux"
+description = "A library of extensions and optimisations to `std::fs`"
+version = "0.0.1"
+authors = ["Steve Smith <tarkasteve@gmail.com>"]
+license = "(MIT OR Apache-2.0)"
+
+homepage = "https://github.com/tarka/fs-extra/"
+repository = "https://github.com/tarka/fs-extra/"
+readme = "README.md"
+
+[dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+tempfile = "3"
