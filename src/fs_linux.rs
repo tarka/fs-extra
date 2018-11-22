@@ -75,7 +75,6 @@ fn lseek(fd: &File, off: i64, wence: Wence) -> io::Result<SeekOff> {
     } else {
         Ok(SeekOff::Offset(r as u64))
     }
-
 }
 
 fn allocate_file(fd: &File, len: u64) -> io::Result<()> {
@@ -219,7 +218,7 @@ pub fn copy(from: &Path, to: &Path) -> io::Result<u64> {
     let (is_sparse, is_xmount) = copy_parms(&in_meta, &out_meta)?;
     let uspace = is_xmount;
 
-        let len = in_meta.len();
+    let len = in_meta.len();
     let total = if is_sparse {
         copy_sparse(&infd, &outfd, uspace, len)?
 

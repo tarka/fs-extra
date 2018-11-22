@@ -7,7 +7,14 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#[cfg(any(target_os = "linux", target_os = "android"))]
-pub mod fs_linux;
+use cfg_if::cfg_if;
 
+cfg_if! {
+    if #[cfg(any(target_os = "linux", target_os = "android"))] {
+        mod fs_linux;
+        pub use self::fs_linux::copy;
+    } else {
+        pub use std::fs::copy;
+    }
+}
 pub mod util;

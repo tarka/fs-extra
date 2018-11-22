@@ -12,6 +12,7 @@ readme = "README.md"
 
 [dependencies]
 libc = "0.2"
+cfg-if = "0.1"
 
 [dev-dependencies]
 tempfile = "3"
