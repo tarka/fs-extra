@@ -11,10 +11,11 @@ use cfg_if::cfg_if;
 
 cfg_if! {
     if #[cfg(any(target_os = "linux", target_os = "android"))] {
-        mod fs_linux;
-        pub use self::fs_linux::copy;
+        mod sparse;
+        pub use self::sparse::copy;
     } else {
         pub use std::fs::copy;
     }
 }
+
 pub mod util;
